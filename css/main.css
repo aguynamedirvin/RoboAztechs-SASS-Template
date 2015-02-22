@@ -19,6 +19,7 @@ html {
 }
 
 body {
+  background: #ffffff;
   color: #333333;
   font-family: "Open Sans", "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.5em;
@@ -306,6 +307,7 @@ textarea {
 }
 
 textarea {
+  font-family: inherit;
   min-height: 125px;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -335,7 +337,7 @@ label > .label-body {
   margin-left: 0.5rem;
 }
 
-#main-menu ul ul li, #main-menu ul ul li a, #main-menu ul ul li.has-sub > a:before, #main-menu > ul > li > a {
+#nav-container ul ul li a, #nav-container > ul > li > a {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   transition: all 0.25s ease;
@@ -344,6 +346,11 @@ label > .label-body {
 .show-search_btn {
   color: #fff;
   font-size: 2.25rem;
+}
+
+.close-search_btn:hover, .show-search_btn:hover {
+  color: #aaa;
+  cursor: pointer;
 }
 
 .search-cont {
@@ -355,8 +362,7 @@ label > .label-body {
   color: #fff;
   font-size: 3rem;
 }
-
-input.search-box {
+.search-cont .search-box {
   background: transparent;
   border: 0;
   padding: 2rem 4rem 1rem;
@@ -366,12 +372,8 @@ input.search-box {
   height: 100px;
 }
 
-.close-search_btn:hover {
-  color: #aaa;
-  cursor: pointer;
-}
-
-#menu-container, #main-menu, #main-menu ul, #main-menu ul li, #main-menu ul li a, #main-menu #menu-button {
+/** Main Navigation Menu */
+#site-navigation, #nav-container, #nav-container ul, #nav-container ul li, #nav-container ul li a, #nav-container #menu-button {
   border: 0;
   display: block;
   line-height: 1;
@@ -381,13 +383,13 @@ input.search-box {
   position: relative;
 }
 
-#menu-container {
+#site-navigation {
   background: #AD141E;
   min-width: 100%;
   top: 0;
   z-index: 2;
 }
-#menu-container:after {
+#site-navigation:after {
   clear: both;
   content: ".";
   display: block;
@@ -396,87 +398,67 @@ input.search-box {
   visibility: hidden;
 }
 
-#main-menu {
+#nav-container {
   max-width: 1120px;
   margin-left: auto;
   margin-right: auto;
 }
-#main-menu:after {
+#nav-container:after {
   content: " ";
   display: block;
   clear: both;
 }
-#main-menu #menu-button {
+#nav-container #menu-button {
   display: none;
 }
-#main-menu ul {
+#nav-container ul {
   float: right;
 }
-#main-menu ul ul {
+#nav-container ul ul {
   left: -9999px;
   position: absolute;
-}
-#main-menu ul ul li {
-  background: #fff;
-  height: 0;
+  width: 200px;
   border: 1px solid #ddd;
-  border-top: 0;
 }
-#main-menu ul ul li a {
-  border-bottom: 1px solid #dddddd;
+#nav-container ul ul li {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+#nav-container ul ul li:last-child {
+  border-bottom: 0;
+}
+#nav-container ul ul li a {
   color: #555;
   font-size: 12px;
   padding: 11px 15px;
   text-decoration: none;
-  width: 170px;
+  text-transform: uppercase;
 }
-#main-menu ul ul li a:hover {
+#nav-container ul ul li a:hover {
   color: #000;
-  background: #eee;
-  padding-left: 30px;
+  background: #efefef;
 }
-#main-menu ul ul li:last-child > a {
-  border-bottom: 0;
-}
-#main-menu ul ul ul {
+#nav-container ul ul ul {
   margin-left: 100%;
-  top: 0;
+  top: -1px;
 }
-#main-menu ul ul li.last-item > a {
-  border-bottom: 0;
-}
-#main-menu ul ul li.has-sub > a:after {
-  background: #dddddd;
-  content: "";
-  display: block;
-  height: 2px;
+#nav-container ul ul li.has-sub > a:after {
+  content: "";
+  display: inline-block;
+  font-family: FontAwesome;
   position: absolute;
   right: 11px;
-  top: 16px;
   width: 8px;
 }
-#main-menu ul ul li.has-sub > a:before {
-  background: #dddddd;
-  content: "";
-  display: block;
-  height: 8px;
-  position: absolute;
-  right: 14px;
-  top: 13px;
-  width: 2px;
-}
-#main-menu ul ul > li.has-sub:hover > a:before {
+#nav-container ul ul > li.has-sub:hover > a:before {
   height: 0;
   top: 17px;
 }
-#main-menu li:hover > ul {
+#nav-container li:hover > ul {
   left: auto;
 }
-#main-menu li:hover > ul > li {
-  height: 35px;
-}
 
-#main-menu > ul:after {
+#nav-container > ul:after {
   clear: both;
   content: ".";
   display: block;
@@ -484,10 +466,10 @@ input.search-box {
   line-height: 0;
   visibility: hidden;
 }
-#main-menu > ul > li {
+#nav-container > ul > li {
   float: left;
 }
-#main-menu > ul > li > a {
+#nav-container > ul > li > a {
   color: #ffffff;
   font-size: 12px;
   font-weight: 400;
@@ -496,37 +478,37 @@ input.search-box {
   text-decoration: none;
   text-transform: uppercase;
 }
-#main-menu > ul > li:hover > a {
+#nav-container > ul > li:hover > a {
   color: #ffffff;
   background: #7f0f16;
 }
 
-#main-menu.align-center > ul {
+#nav-container.align-center > ul {
   font-size: 0;
   text-align: center;
 }
 
-#main-menu.align-center > ul > li {
+#nav-container.align-center > ul > li {
   display: inline-block;
   float: none;
 }
 
-#main-menu.align-center ul ul {
+#nav-container.align-center ul ul {
   text-align: left;
 }
 
-#main-menu.align-right > ul > li {
+#nav-container.align-right > ul > li {
   float: right;
 }
 
-#main-menu > ul > li.has-sub:hover > a:before {
+#nav-container > ul > li.has-sub:hover > a:before {
   height: 0;
   top: 34px;
 }
-#main-menu > ul > li.has-sub > a {
+#nav-container > ul > li.has-sub > a {
   padding-right: 30px;
 }
-#main-menu > ul > li.has-sub > a:after {
+#nav-container > ul > li.has-sub > a:after {
   content: "";
   display: block;
   position: absolute;
@@ -536,101 +518,100 @@ input.search-box {
   font-family: FontAwesome;
 }
 
-#main-menu.align-right ul ul {
+#nav-container.align-right ul ul {
   text-align: right;
 }
-#main-menu.align-right ul ul ul {
+#nav-container.align-right ul ul ul {
   margin-left: 0;
   margin-right: 100%;
 }
-#main-menu.align-right ul ul li.has-sub > a:after {
+#nav-container.align-right ul ul li.has-sub > a:after {
   left: 11px;
   right: auto;
 }
-#main-menu.align-right ul ul li.has-sub > a:before {
+#nav-container.align-right ul ul li.has-sub > a:before {
   left: 14px;
   right: auto;
 }
-#main-menu.align-right li:hover > ul {
+#nav-container.align-right li:hover > ul {
   left: auto;
   right: 0;
 }
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
-  #menu-container {
+  #site-navigation {
     background-image: none;
     position: fixed;
   }
 
-  #main-menu {
+  #nav-container {
     width: 100%;
     /* Hamburger */
   }
-  #main-menu ul {
+  #nav-container ul {
     display: none;
     width: 100%;
   }
-  #main-menu ul li {
+  #nav-container ul li {
     border-top: 1px solid #7f0f16;
     display: inline-block;
     width: 100%;
   }
-  #main-menu ul li a {
+  #nav-container ul li a {
     border-bottom: 0;
     padding: 17px;
     width: 100%;
   }
-  #main-menu ul ul {
+  #nav-container ul ul {
+    border: 0;
     left: 0;
     margin: 0;
     position: relative;
     text-align: left;
     width: 100%;
   }
-  #main-menu ul ul li {
-    height: auto;
+  #nav-container ul ul li {
     background: #AD141E;
+    border-bottom: 0;
+    height: auto;
     border-color: #7f0f16;
   }
-  #main-menu ul ul li a {
+  #nav-container ul ul li a {
     background: none;
     border-bottom: 0;
     color: #dddddd;
     padding-left: 25px;
     width: 100%;
   }
-  #main-menu ul ul li:hover > a {
-    color: #ffffff;
-  }
-  #main-menu ul ul ul {
+  #nav-container ul ul ul {
     left: 0;
     margin: 0;
     position: relative;
     text-align: left;
     width: 100%;
   }
-  #main-menu ul ul ul li a {
+  #nav-container ul ul ul li a {
     padding-left: 35px;
   }
-  #main-menu ul ul li.active > a {
+  #nav-container ul ul li.active > a {
     color: #ffffff;
   }
-  #main-menu ul ul .submenu-button {
+  #nav-container ul ul .submenu-button {
     height: 34px;
     width: 34px;
   }
-  #main-menu ul ul .submenu-button:after {
+  #nav-container ul ul .submenu-button:after {
     right: 13px;
     top: 15px;
   }
-  #main-menu ul ul .submenu-button:before {
+  #nav-container ul ul .submenu-button:before {
     right: 16px;
     top: 12px;
   }
-  #main-menu li:hover > ul > li {
+  #nav-container li:hover > ul > li {
     height: auto;
   }
-  #main-menu #menu-button {
+  #nav-container #menu-button {
     color: #ffffff;
     cursor: pointer;
     display: block;
@@ -640,12 +621,12 @@ input.search-box {
     text-transform: uppercase;
     text-align: right;
   }
-  #main-menu #menu-button:after, #main-menu #menu-button:before {
+  #nav-container #menu-button:after, #nav-container #menu-button:before {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     transition: all 0.5s ease;
   }
-  #main-menu #menu-button:after {
+  #nav-container #menu-button:after {
     border-bottom: 2px solid #ffffff;
     border-top: 2px solid #ffffff;
     content: "";
@@ -659,7 +640,7 @@ input.search-box {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
   }
-  #main-menu #menu-button:before {
+  #nav-container #menu-button:before {
     background: #ffffff;
     content: "";
     display: block;
@@ -669,7 +650,7 @@ input.search-box {
     top: 16px;
     width: 20px;
   }
-  #main-menu #menu-button.menu-opened:after {
+  #nav-container #menu-button.menu-opened:after {
     background: #ffffff;
     border: 0;
     height: 2px;
@@ -681,7 +662,7 @@ input.search-box {
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
   }
-  #main-menu #menu-button.menu-opened:before {
+  #nav-container #menu-button.menu-opened:before {
     background: #ffffff;
     top: 23px;
     width: 15px;
@@ -691,7 +672,7 @@ input.search-box {
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
   }
-  #main-menu .submenu-button {
+  #nav-container .submenu-button {
     border-left: 1px solid #7f0f16;
     cursor: pointer;
     display: block;
@@ -702,7 +683,7 @@ input.search-box {
     width: 46px;
     z-index: 99;
   }
-  #main-menu .submenu-button:after {
+  #nav-container .submenu-button:after {
     background: #dddddd;
     content: "";
     display: block;
@@ -712,7 +693,7 @@ input.search-box {
     top: 22px;
     width: 8px;
   }
-  #main-menu .submenu-button:before {
+  #nav-container .submenu-button:before {
     background: #dddddd;
     content: "";
     display: block;
@@ -722,25 +703,25 @@ input.search-box {
     top: 19px;
     width: 2px;
   }
-  #main-menu .submenu-button.submenu-opened {
+  #nav-container .submenu-button.submenu-opened {
     background: #262626;
   }
-  #main-menu .submenu-button.submenu-opened:after {
+  #nav-container .submenu-button.submenu-opened:after {
     background: #ffffff;
   }
-  #main-menu .submenu-button.submenu-opened:before {
+  #nav-container .submenu-button.submenu-opened:before {
     display: none;
   }
 
-  #main-menu.align-center > ul {
+  #nav-container.align-center > ul {
     text-align: left;
   }
 
-  #main-menu > ul > li {
+  #nav-container > ul > li {
     float: none;
   }
 
-  #main-menu.align-right ul ul {
+  #nav-container.align-right ul ul {
     left: 0;
     margin: 0;
     position: relative;
@@ -748,7 +729,7 @@ input.search-box {
     width: 100%;
   }
 
-  #main-menu > ul > li.has-sub > a:after, #main-menu > ul > li.has-sub > a:before, #main-menu ul ul > li.has-sub > a:after, #main-menu ul ul > li.has-sub > a:before {
+  #nav-container > ul > li.has-sub > a:after, #nav-container > ul > li.has-sub > a:before, #nav-container ul ul > li.has-sub > a:after, #nav-container ul ul > li.has-sub > a:before {
     display: none;
   }
 }
@@ -808,8 +789,7 @@ input.search-box {
 /** Entry */
 .hentry {
   /* font-size: 1.75rem */
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 }
 
 .entry-header {
@@ -1107,8 +1087,8 @@ input.search-box {
 
 .social-share {
   border-bottom: 1px solid #dddddd;
-  margin: 40px 0;
-  padding: 30px 0;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
   text-align: center;
 }
 
@@ -1169,7 +1149,6 @@ input.search-box {
   background: #232323;
   color: #ddd;
   font-size: 1.25rem;
-  margin-top: 40px;
 }
 .footer a {
   color: #dddddd;
@@ -1268,20 +1247,24 @@ input.search-box {
 }
 
 /* Grid */
-.main {
-  margin-top: 7rem;
-}
-
-.wrap {
-  padding: 2rem;
+.footer-widgets, .wrap, .main {
   max-width: 1120px;
   margin-left: auto;
   margin-right: auto;
 }
-.wrap:after {
+.footer-widgets:after, .wrap:after, .main:after {
   content: " ";
   display: block;
   clear: both;
+}
+
+.wrap, .main {
+  padding: 2rem;
+}
+
+.main {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .u-full-width {
@@ -1301,7 +1284,7 @@ input.search-box {
 }
 
 @media (min-width: 768px) {
-  .wrap {
+  .wrap, .main {
     padding: 0;
   }
 
@@ -1311,19 +1294,11 @@ input.search-box {
     margin-right: 3.84615%;
   }
 
-  .full-page, .full-width {
+  .full-page {
     width: 100%;
     float: left;
     margin-left: 0;
     margin-right: 0;
-  }
-
-  .single-page {
-    width: 65.38462%;
-    float: left;
-    margin-right: 3.84615%;
-    float: none;
-    margin: 0 auto;
   }
 
   .sidebar {

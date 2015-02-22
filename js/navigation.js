@@ -71,7 +71,7 @@
 (function($){
 $(document).ready(function(){
 
-$("#main-menu").dropMenu({
+$("#nav-container").dropMenu({
 	 title: "Menu",
 	 format: "multitoggle",
 });

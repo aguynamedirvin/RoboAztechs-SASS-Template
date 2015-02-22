@@ -16,6 +16,9 @@ $height3: 0 // Appears 5 times
 .show-search_btn 
 	color: #fff
 	font-size: 2.25rem
+.close-search_btn:hover, .show-search_btn:hover 
+	color: #aaa
+	cursor: pointer
 .search-cont 
 	width: 100%
 	background: #222
@@ -24,20 +27,17 @@ $height3: 0 // Appears 5 times
 	display: none
 	color: #fff
 	font-size: 3rem
-input.search-box 
-	background: transparent
-	border: 0
-	padding: 2rem 4rem 1rem
-	height: auto
-	color: #fff
-	width: 95%
-	height: 100px
-.close-search_btn:hover 
-	color: #aaa
-	cursor: pointer
+	.search-box 
+		background: transparent
+		border: 0
+		padding: 2rem 4rem 1rem
+		height: auto
+		color: #fff
+		width: 95%
+		height: 100px
 
-
-#menu-container, #main-menu, #main-menu ul, #main-menu ul li, #main-menu ul li a, #main-menu #menu-button  
+/** Main Navigation Menu **/
+#site-navigation, #nav-container, #nav-container ul, #nav-container ul li, #nav-container ul li a, #nav-container #menu-button  
 	border: 0
 	display: block
 	line-height: 1
@@ -46,7 +46,7 @@ input.search-box
 	padding: 0
 	position: relative
 
-#menu-container 
+#site-navigation 
 	background: $color2
 	min-width: 100%
 	top: 0
@@ -59,7 +59,7 @@ input.search-box
 		line-height: $height3
 		visibility: hidden
 
-#main-menu 
+#nav-container 
 	@include container
 	#menu-button 
 		display: none
@@ -71,68 +71,47 @@ input.search-box
 		ul 
 			left: -9999px
 			position: absolute
+			width: 200px
+			border: 1px solid #ddd
 			li 
 				background: #fff
-				height: $height3
-				border: 1px solid #ddd
-				border-top: 0
-				@extend %transition
+				border-bottom: 1px solid #ddd
+				&:last-child
+					border-bottom: 0
 				a
-					border-bottom: 1px solid $color0
 					color: #555
 					font-size: 12px
 					padding: 11px 15px
 					text-decoration: none
-					width: 170px
+					text-transform: uppercase
 					@extend %transition
 					&:hover 
 						color: #000
-						background: #eee
-						padding-left: 30px
-				&:last-child>a 
-					border-bottom: 0
+						background: #efefef
 			ul 
 				margin-left: 100%
-				top: 0
-			
-			li.last-item>a 
-				border-bottom: 0
-			li.has-sub>a 
-				&:after 
-					background: $color0
-					content: ''
-					display: block
-					height: 2px
+				top: -1px
+
+			li.has-sub > a 
+				&:after
+					content: '\f105'
+					display: inline-block
+					font-family: FontAwesome
 					position: absolute
 					right: 11px
-					top: 16px
 					width: $width2
 				
-				&:before
-					background: $color0
-					content: ''
-					display: block
-					height: 8px
-					position: absolute
-					right: 14px
-					top: 13px
-					width: $width1
-					@extend %transition
-				
-		ul>li.has-sub 
-			&:hover>a:before 
+		ul > li.has-sub 
+			&:hover > a:before 
 				height: $height3
 				top: 17px
 	li 
-		&:hover>ul 
+		&:hover > ul 
 			left: auto
-		
-		&:hover>ul>li 
-			height: 35px
 		
 	
 
-#main-menu > ul 
+#nav-container > ul 
 	&:after 
 		clear: both
 		content: "."
@@ -156,23 +135,23 @@ input.search-box
 			background: darken($color2, 10)
 	
 
-#main-menu.align-center > ul 
+#nav-container.align-center > ul 
 	font-size: 0
 	text-align: center
 
-#main-menu.align-center > ul > li 
+#nav-container.align-center > ul > li 
 	display: inline-block
 	float: none
 
-#main-menu.align-center 
+#nav-container.align-center 
 	ul 
 		ul 
 			text-align: left
 
-#main-menu.align-right>ul>li 
+#nav-container.align-right>ul>li 
 	float: right
 
-#main-menu > ul > li.has-sub 
+#nav-container > ul > li.has-sub 
 	&:hover > a:before 
 		height: $height3
 		top: 34px //23px
@@ -185,30 +164,9 @@ input.search-box
 			right: 11px
 			top: 27px
 			width: $width2
-			font-family: FontAwesome
-//		&:after 
-//			background: $color0
-//			content: ''
-//			display: block
-//			height: 2px
-//			position: absolute
-//			right: 11px
-//			top: 33px //22px
-//			width: $width2
-//		&:before 
-//			background: $color0
-//			content: ''
-//			display: block
-//			height: 8px
-//			position: absolute
-//			right: 14px
-//			top: 30px //19px
-//			width: $width1
-//			@extend %transition
-		
-	
+			font-family: FontAwesome	
 
-#main-menu.align-right 
+#nav-container.align-right 
 	ul 
 		ul 
 			text-align: right
@@ -228,10 +186,6 @@ input.search-box
 		&:hover>ul 
 			left: auto
 			right: 0
-		
-	
-
-
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) 
 
@@ -248,11 +202,11 @@ input.search-box
 	// Height variables (appears count calculates by raw css)
 	$height3: 2px // Appears 3 times
 
-	#menu-container
+	#site-navigation
 		background-image: none
 		position: fixed
 
-	#main-menu 
+	#nav-container 
 		width: $width1
 		ul 
 			display: none
@@ -265,28 +219,24 @@ input.search-box
 					border-bottom: 0
 					padding: 17px
 					width: $width1
-				
-			
 			ul 
+				border: 0
 				left: 0
 				margin: 0
 				position: relative
 				text-align: left
 				width: $width1
 				li 
-					height: auto
 					background: $color2
+					border-bottom: 0
+					height: auto
 					border-color: darken($color2, 10)
 					a 
 						background: none
 						border-bottom: 0
 						color: $color0
 						padding-left: 25px
-						width: $width1
-					
-					&:hover>a 
-						color: $color1
-					
+						width: $width1				
 				
 				ul 
 					left: 0
@@ -408,24 +358,19 @@ input.search-box
 			
 		
 	
-	#main-menu.align-center>ul 
+	#nav-container.align-center>ul 
 		text-align: left
 	
-	#main-menu>ul>li 
+	#nav-container>ul>li 
 		float: none
 	
-	#main-menu.align-right 
+	#nav-container.align-right 
 		ul 
 			ul 
 				left: 0
 				margin: 0
 				position: relative
 				text-align: left
-				width: $width1
-			
-		
-	
-	#main-menu>ul>li.has-sub>a:after, #main-menu>ul>li.has-sub>a:before, #main-menu ul ul>li.has-sub>a:after, #main-menu ul ul>li.has-sub>a:before  
+				width: $width1	
+	#nav-container>ul>li.has-sub>a:after, #nav-container>ul>li.has-sub>a:before, #nav-container ul ul>li.has-sub>a:after, #nav-container ul ul>li.has-sub>a:before  
 		display: none
-	
-

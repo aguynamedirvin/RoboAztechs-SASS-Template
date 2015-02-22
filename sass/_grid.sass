@@ -1,9 +1,12 @@
 /* Grid */
-.main
-	margin-top: 7rem
-.wrap
-	padding: 2rem
+%wrap
 	@include container
+.wrap, .main
+	padding: 2rem
+	@extend %wrap
+.main
+	margin-top: 50px
+	margin-bottom: 50px
 
 .u-full-width
 	width: 100%
@@ -15,16 +18,12 @@
 	float: left
 	
 @include susy-breakpoint($break-small, $susy)
-	.wrap
+	.wrap, .main
 		padding: 0
 	.content
 		@include span(8)
-	.full-page, .full-width
-		@include span(12)
-	.single-page
-		@include span(8)
-		float: none
-		margin: 0 auto
+	.full-page
+		@include span(12)	
 	.sidebar
 		@include span(4 last)
 
