@@ -1,0 +1,82 @@
+/** Site Footer **/
+.footer
+	background: $footer-background
+	color: #ddd
+	font-size: 1.25rem
+	margin-top: 40px
+	a
+		color: #dddddd
+		text-decoration: none
+		&:hover
+			color: #ffffff
+.footer-note
+	background: #1b1b1b
+	color: #888888
+	font-size: 1.2rem
+	padding: 2rem 0
+
+.footer-widgets
+	padding: 30px 0
+	overflow: hidden
+
+.footer .widget
+	@extend .col-4
+	&:nth-child(3n)
+		margin-right: 0
+	.widget-title
+		font-weight: 400
+		letter-spacing: 0.1rem
+		text-transform: uppercase
+	input,
+	textarea
+		background-color: $footer-background
+		border: 1px solid #777
+		color: #ffffff
+		border-radius: 0
+		&:focus
+			border-color: #ccc
+	input[type="submit"]:hover
+		background: #777
+
+	.ftr-scl-icon
+		border-radius: 100%
+		border: 2px solid #ddd
+		color: $footer-background
+		display: inline-block
+		font-size: 2rem
+		height: 35px
+		line-height: 29px
+		margin: 0 20px 20px 0
+		position: relative
+		text-align: center
+		width: 35px
+		z-index: 2
+		&:after
+			background: #ddd
+			border-radius: 100%
+			content: ""
+			height: 35px
+			left: -2px
+			position: absolute
+			top: -2px
+			width: 35px
+			z-index: -1
+			@include transition(all 400ms ease)
+		&:hover, &:focus
+			color: #fff
+			border-color: #fff
+			&:after
+				@include transform(scale(0))
+		&:last-of-type
+			margin: 0
+
+.siteinfo
+	@extend .alignleft
+.footer-navigation
+	display: inline-block
+	@extend .alignright
+	> ul
+		list-style: none
+		> li
+			display: inline-block
+			margin: 0 10px

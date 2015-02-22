@@ -1,0 +1,44 @@
+//
+// Settings
+//
+
+// Grid
+$susy: (
+	columns: 12,
+	gutters: 4/5,
+	container: 1120px,
+	global-box-sizing: border-box,
+);
+$break-small: 768px;
+
+// Fonts
+$font-family: "Open Sans", "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !global; // default fonts
+$heading-family: 'Oswald', sans-serif; //'Montserrat', sans-serif !global; // default heading (h1-h6) font
+$cursive-family: 'Crimson Text', serif !global; // default cursive font
+$font-color: #333333 !global;  // default font color
+$heading-color: #181818 !global; // default heading (h1-h6) color
+$form-font: $font-family !global; // default form font
+
+// LINKS
+$link-color: #AD141E !global; // default link color
+$link-hover: #DB1926 !global; // default link color on :hover
+$link-decoration: underline !global; // default link decoration
+
+// UI Colors
+$primary-color: #AD141E; //#33C3F0;
+
+// Navigation
+$nav-background: $primary-color;
+$nav-hover-background: darken($primary-color, 10);
+$nav-link: #dddddd;
+$nav-hover-link: #ffffff;
+$nav-align: right;
+
+// Footer
+$footer-background: #232323;
+
+// BREAKPOINTS
+$tablet-width: 768px !global; // the tablet width media query
+$mobile-portrait-width: 300px !global; // the mobile portrait media query
+$mobile-landscape-width: 420px !global; // the mobile landscape media query
+$mobile-fluid-width: 100%; // this value is not used with breakpoints, it is used in generating a fluid grid for mobile devices

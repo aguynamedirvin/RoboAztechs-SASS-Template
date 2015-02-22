@@ -1,0 +1,84 @@
+/* Grid */
+.main
+	margin-top: 7rem
+.wrap
+	padding: 2rem
+	@include container
+
+.u-full-width
+	width: 100%
+.u-max-full-width
+	max-width: 100%
+.alignright, .pull-right
+	float: right
+.alignleft, .pull-left
+	float: left
+	
+@include susy-breakpoint($break-small, $susy)
+	.wrap
+		padding: 0
+	.content
+		@include span(8)
+	.full-page, .full-width
+		@include span(12)
+	.single-page
+		@include span(8)
+		float: none
+		margin: 0 auto
+	.sidebar
+		@include span(4 last)
+
+	.col-1 
+		width: 5.71429%
+		float: left
+		margin-right: 2.85714%
+	.col-2 
+		width: 14.28571%
+		float: left
+		margin-right: 2.85714%
+	.col-3 
+		width: 22.85714%
+		float: left
+		margin-right: 2.85714%
+	.col-4 
+		width: 31.42857%
+		float: left
+		margin-right: 2.85714%
+	.col-5 
+		width: 40%
+		float: left
+		margin-right: 2.85714%
+	.col-6 
+		width: 48.57143%
+		float: left
+		margin-right: 2.85714%
+	.col-7 
+		width: 57.14286%
+		float: left
+		margin-right: 2.85714%
+	.col-8 
+		width: 65.71429%
+		float: left
+		margin-right: 2.85714%
+	.col-9 
+		width: 74.28571%
+		float: left
+		margin-right: 2.85714%
+	.col-10 
+		width: 82.85714%
+		float: left
+		margin-right: 2.85714%
+	.col-11 
+		width: 91.42857%
+		float: left
+		margin-right: 2.85714%
+	.col-12 
+		width: 100%
+		float: left
+		margin-left: 0
+		margin-right: 0
+
+	//for $i from 1 through 12
+//		.col-#$i
+//			@include span($i)
+	

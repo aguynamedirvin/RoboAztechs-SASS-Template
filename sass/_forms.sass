@@ -1,0 +1,52 @@
+/*	Forms */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select 
+	background-color: #fff
+	//border-radius: 4px
+	border: 1px solid #D1D1D1
+	box-shadow: none
+	height: 46px
+	margin-bottom: 1rem
+	padding: 10px 10px /* The 6px vertically centers text on FF, ignored by Webkit */
+	@include box-sizing(border-box)
+	@include transition(all 0.35s ease)
+	&:focus
+		border-color: $primary-color
+		outline: 0 
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea 
+	@include appearance(none)
+textarea 
+	min-height: 125px
+	padding-bottom: 10px 
+	padding-top: 10px
+	resize: vertical
+label,
+legend 
+	display: block
+	font-weight: 600 
+	margin-bottom: .5rem
+fieldset 
+	border-width: 0 
+	padding: 0
+input[type="checkbox"],
+input[type="radio"] 
+	display: inline 
+label > .label-body 
+	display: inline-block
+	font-weight: normal 
+	margin-left: .5rem
