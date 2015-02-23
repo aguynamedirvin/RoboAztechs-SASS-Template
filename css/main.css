@@ -21,7 +21,7 @@ html {
 body {
   background: #ffffff;
   color: #333333;
-  font-family: "Open Sans", "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.5em;
   font-weight: 400;
   line-height: 2;
@@ -39,7 +39,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   margin-bottom: 2rem;
   margin-top: 0;
+  text-rendering: optimizelegibility;
   text-transform: uppercase;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none;
 }
 
 h1 {
@@ -418,11 +422,11 @@ label > .label-body {
   left: -9999px;
   position: absolute;
   width: 200px;
-  border: 1px solid #ddd;
+  border: 1px solid #cccccc;
 }
 #nav-container ul ul li {
   background: #fff;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #cccccc;
 }
 #nav-container ul ul li:last-child {
   border-bottom: 0;
@@ -579,7 +583,7 @@ label > .label-body {
   #nav-container ul ul li a {
     background: none;
     border-bottom: 0;
-    color: #dddddd;
+    color: #cccccc;
     padding-left: 25px;
     width: 100%;
   }
@@ -684,7 +688,7 @@ label > .label-body {
     z-index: 99;
   }
   #nav-container .submenu-button:after {
-    background: #dddddd;
+    background: #cccccc;
     content: "";
     display: block;
     height: 2px;
@@ -694,7 +698,7 @@ label > .label-body {
     width: 8px;
   }
   #nav-container .submenu-button:before {
-    background: #dddddd;
+    background: #cccccc;
     content: "";
     display: block;
     height: 8px;
@@ -805,7 +809,7 @@ label > .label-body {
 }
 
 .author a {
-  font-family: "Open Sans", "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 600;
   letter-spacing: 1px;
@@ -875,7 +879,7 @@ label > .label-body {
 
 /** Author About Box */
 .author-info {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #cccccc;
   display: block;
   margin-bottom: 40px;
   overflow: hidden;
@@ -1026,6 +1030,9 @@ label > .label-body {
   margin: 0;
   text-transform: capitalize;
 }
+.widget_recent-posts > ul > li > .article-meta > h2 a {
+  color: #181818;
+}
 .widget_recent-posts > ul > li > .article-meta > .entry-meta {
   font-size: 1.25rem;
 }
@@ -1086,7 +1093,7 @@ label > .label-body {
 }
 
 .social-share {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #cccccc;
   margin-bottom: 40px;
   padding-bottom: 40px;
   text-align: center;
@@ -1144,14 +1151,58 @@ label > .label-body {
   color: #b9b9b9;
 }
 
+hr {
+  border-top: 1px solid #E1E1E1;
+  border-width: 0;
+  margin-bottom: 3.5rem;
+  margin-top: 3rem;
+}
+
+table {
+  width: 100%;
+  border: 1px solid #cccccc;
+  margin-bottom: 1.5em;
+}
+table caption {
+  margin: 0 0 7px;
+  font-size: 0.75em;
+  color: #aaaaaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+tr {
+  border-bottom: 1px solid #cccccc;
+}
+tr:nth-child(even) {
+  background-color: #cccccc;
+}
+
+td {
+  padding: 7px;
+  border-right: 1px solid #cccccc;
+}
+td:last-child {
+  border-right: 0;
+}
+
+th {
+  background-color: #cccccc;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+}
+th:last-child {
+  border-right: 0;
+}
+
 /** Site Footer */
 .footer {
   background: #232323;
-  color: #ddd;
+  color: #cccccc;
   font-size: 1.25rem;
 }
 .footer a {
-  color: #dddddd;
+  color: #cccccc;
   text-decoration: none;
 }
 .footer a:hover {
@@ -1190,11 +1241,13 @@ label > .label-body {
   border-color: #ccc;
 }
 .footer .widget input[type="submit"]:hover {
-  background: #777;
+  background: #cccccc;
+  border-color: #cccccc;
+  color: #232323;
 }
 .footer .widget .ftr-scl-icon {
   border-radius: 100%;
-  border: 2px solid #ddd;
+  border: 2px solid #cccccc;
   color: #232323;
   display: inline-block;
   font-size: 2rem;
@@ -1207,7 +1260,7 @@ label > .label-body {
   z-index: 2;
 }
 .footer .widget .ftr-scl-icon:after {
-  background: #ddd;
+  background: #cccccc;
   border-radius: 100%;
   content: "";
   height: 35px;

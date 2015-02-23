@@ -12,7 +12,7 @@ $susy: (
 $break-small: 768px;
 
 // Fonts
-$font-family: "Open Sans", "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !global; // default fonts
+$font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !global; // "Raleway", default fonts
 $heading-family: 'Oswald', sans-serif; //'Montserrat', sans-serif !global; // default heading (h1-h6) font
 $cursive-family: 'Crimson Text', serif !global; // default cursive font
 $font-color: #333333 !global;  // default font color
@@ -27,10 +27,14 @@ $link-decoration: underline !global; // default link decoration
 // UI Colors
 $primary-color: #AD141E; //#33C3F0;
 
+$dark-grey: #aaaaaa;
+$grey: #cccccc;
+$light-grey: $grey;
+
 // Navigation
 $nav-background: $primary-color;
 $nav-hover-background: darken($primary-color, 10);
-$nav-link: #dddddd;
+$nav-link: $grey;
 $nav-hover-link: #ffffff;
 $nav-align: right;
 
