@@ -43,7 +43,11 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #181818;
   text-decoration: none;
+}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #DB1926;
 }
 
 h1 {
@@ -1029,9 +1033,6 @@ label > .label-body {
   font-size: 2rem;
   margin: 0;
   text-transform: capitalize;
-}
-.widget_recent-posts > ul > li > .article-meta > h2 a {
-  color: #181818;
 }
 .widget_recent-posts > ul > li > .article-meta > .entry-meta {
   font-size: 1.25rem;
