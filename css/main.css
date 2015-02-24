@@ -174,7 +174,7 @@ hr {
   margin-top: 3rem;
 }
 
-blockquote, q, .member-role, .author-role, .comment .metadata {
+blockquote, q, .team-member-role, .author-role, .comment .metadata {
   color: #aaaaaa;
   font-style: italic;
   font-family: "Crimson Text", serif;
@@ -742,7 +742,7 @@ label > .label-body {
   }
 }
 /** Team */
-.member {
+.team-member {
   display: inline-block;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -753,26 +753,26 @@ label > .label-body {
 }
 
 @media screen and (min-width: 768px) {
-  .member {
+  .team-member {
     width: 15.625%;
     float: left;
     margin-right: 3.84615%;
   }
 }
-.member-portrait {
+.team-member-portrait {
   border-radius: 100%;
   height: 0;
-  margin-bottom: 20px;
+  margin: 0;
   overflow: hidden;
   padding-bottom: 100%;
   width: 100%;
 }
 
-.member-portrait img {
+.team-member-portrait img {
   width: 100%;
 }
 
-.member-name {
+.team-member-name {
   text-transform: uppercase;
   font-weight: bold;
 }

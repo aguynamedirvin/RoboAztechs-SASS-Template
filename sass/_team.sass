@@ -1,25 +1,24 @@
 /** Team **/
-.member 
+.team-member 
 	display: inline-block
 	margin-bottom: 20px
 	margin-top: 20px
 	text-align: center
 	@include span(5.75)
 @media screen and (min-width: $break-small)
-	.member
+	.team-member
 		@include span(2.25)
-.member-portrait 
+.team-member-portrait 
 	border-radius: 100%
 	height: 0
-	margin-bottom: 20px
+	margin: 0
 	overflow: hidden
 	padding-bottom: 100%
 	width: 100%
-.member-portrait img 
+.team-member-portrait img 
 	width: 100%
-//.member-meta 
-.member-name 
+.team-member-name 
 	text-transform: uppercase
 	font-weight: bold
-.member-role 
+.team-member-role 
 	@extend %italic
