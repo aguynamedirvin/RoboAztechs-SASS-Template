@@ -1,9 +1,8 @@
 /* Grid */
-%wrap
-	@include container
-.wrap, .main
+%wrap, .wrap, .main
 	padding: 2rem
-	@extend %wrap
+	@include container
+
 .main
 	margin-top: 50px
 	margin-bottom: 50px
@@ -27,57 +26,6 @@
 	.sidebar
 		@include span(4 last)
 
-	.col-1 
-		width: 5.71429%
-		float: left
-		margin-right: 2.85714%
-	.col-2 
-		width: 14.28571%
-		float: left
-		margin-right: 2.85714%
-	.col-3 
-		width: 22.85714%
-		float: left
-		margin-right: 2.85714%
-	.col-4 
-		width: 31.42857%
-		float: left
-		margin-right: 2.85714%
-	.col-5 
-		width: 40%
-		float: left
-		margin-right: 2.85714%
-	.col-6 
-		width: 48.57143%
-		float: left
-		margin-right: 2.85714%
-	.col-7 
-		width: 57.14286%
-		float: left
-		margin-right: 2.85714%
-	.col-8 
-		width: 65.71429%
-		float: left
-		margin-right: 2.85714%
-	.col-9 
-		width: 74.28571%
-		float: left
-		margin-right: 2.85714%
-	.col-10 
-		width: 82.85714%
-		float: left
-		margin-right: 2.85714%
-	.col-11 
-		width: 91.42857%
-		float: left
-		margin-right: 2.85714%
-	.col-12 
-		width: 100%
-		float: left
-		margin-left: 0
-		margin-right: 0
-
-	//for $i from 1 through 12
-//		.col-#$i
-//			@include span($i)
-	
+	@for $i from 1 through 12
+		.col-#{$i}
+			@include span($i)
