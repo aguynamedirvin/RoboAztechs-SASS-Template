@@ -9,14 +9,12 @@
 			}, options);
 
 			return this.each(function() {
-				cssmenu.prepend('<div id="menu-hamburger">' + settings.title + '</div>');
-				$(this).find("#menu-hamburger").on('click', function(){
-
-
+				cssmenu.prepend('<div id="menu-button">' + settings.title + '</div>');
+				$(this).find("#menu-button").on('click', function(){
 					$(this).toggleClass('menu-opened');
 
 					// Define the menu
-					var mainmenu = $('.navigation');
+					var mainmenu = $(this).next('ul');
 
 
 					if (mainmenu.hasClass('open')) { 
@@ -73,7 +71,7 @@
 (function($){
 $(document).ready(function(){
 
-$("#site-navigation").dropMenu({
+$("#nav-container").dropMenu({
 	 title: "Menu",
 	 format: "multitoggle",
 });
