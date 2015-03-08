@@ -555,7 +555,7 @@ ul.navigation li ul li a {
   ul.navigation > li ul li:hover > a {
     color: #fff;
   }
-  ul.navigation > li ul li.has-sub a:after {
+  ul.navigation > li ul li.has-sub > a:after {
     content: "";
     display: block;
     position: absolute;
