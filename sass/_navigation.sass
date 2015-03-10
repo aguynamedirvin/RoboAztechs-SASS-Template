@@ -7,15 +7,12 @@
 	width: 100%
 	z-index: 99
 
-//#nav-container
-//	position: relative
-
-
 
 ul.navigation
 	list-style: none
 	margin: 0
 	position: static
+	display: none
 
 	li
 		border-top: 1px solid $nav-hover-background
@@ -117,11 +114,11 @@ ul.navigation
 @include susy-breakpoint($break-big, $susy)
 	#site-navigation
 		height: $nav-height
+		overflow: visible
 		position: relative
 
-		overflow: visible
-
 	ul.navigation
+		display: block
 		float: right
 		> li
 			border: 0
