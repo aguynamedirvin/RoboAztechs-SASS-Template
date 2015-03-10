@@ -70,13 +70,14 @@
 	};
 })(jQuery);
 
+
 (function($){
-$(document).ready(function(){
+	$(document).ready(function(){
 
-$("#site-navigation").dropMenu({
-	 title: "Menu",
-	 format: "multitoggle",
-});
+		$("#site-navigation").dropMenu({
+			title: "Menu",
+			format: "multitoggle",
+		});
 
-});
+	});
 })(jQuery);

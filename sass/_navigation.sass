@@ -1,46 +1,48 @@
-$dark-nav: darken($nav-background, 10)
-
 #site-navigation
-	height: 30px
-	color: #fff
-	text-transform: uppercase
 	background: $nav-background
-	z-index: 99
-	top: 0
+	color: $nav-link
 	position: fixed
+	text-transform: uppercase
+	top: 0
 	width: 100%
-	height: auto
+	z-index: 99
 
-#nav-container
-	position: relative
+//#nav-container
+//	position: relative
+
+
 
 ul.navigation
-	margin: 0
 	list-style: none
-	background: $nav-background
+	margin: 0
+	position: static
 
 	li
-		position: relative
+		border-top: 1px solid $nav-hover-background
 		margin: 0
-		border-top: 1px solid $dark-nav
+		position: relative
 		a
+			color: $nav-link
+			display: block
 			font-size: 1.2rem
 			padding: 10px 20px
-			color: #fff
-			display: block
 			text-decoration: none
+			@include transition(all 0.35s ease)
 
 		/** Nested Menu **/
 		ul
-			margin: 0
 			list-style: none
+			margin: 0 0 0 40px
 			li a
-				padding-left: 35px
+				padding-left: 40px
 
 #menu-hamburger
-	text-align: right
 	font-weight: bold
-	padding: 10px 50px 10px 0
+	height: 5rem
+	padding: 1rem 5rem 1rem 0 //10px 50px 10px 0
+	text-align: right
+	&:before, &:after
+		@include transition(all 0.35s ease)	
 	&:before
 		background: #fff
 		content: ''
@@ -53,6 +55,7 @@ ul.navigation
 	&:after
 		border-bottom: 2px solid #fff
 		border-top: 2px solid #fff
+		box-sizing: content-box
 		content: ''
 		display: block
 		height: 4px
@@ -60,10 +63,25 @@ ul.navigation
 		right: 17px
 		top: 22px
 		width: 20px
-		@include box-sizing(content-box)
+	// When menu is opened do hamburger animation
+	&.menu-opened
+		&:after
+			background: #ffffff
+			border: 0
+			height: 2px
+			top: 23px
+			width: 15px
+			@include transform(rotate(45deg))
+		&:before
+			background: #ffffff
+			top: 23px
+			width: 15px
+			@include transform(rotate(-45deg))
+
+
 
 .submenu-button
-	border-left: 1px solid $dark-nav
+	border-left: 1px solid $nav-hover-background
 	cursor: pointer
 	display: block
 	height: 45px
@@ -96,9 +114,13 @@ ul.navigation
 		display: none
 
 
+@include susy-breakpoint($break-big, $susy)
+	#site-navigation
+		height: $nav-height
+		position: relative
 
+		overflow: visible
 
-@include susy-breakpoint($break-small, $susy)
 	ul.navigation
 		float: right
 		> li
@@ -106,66 +128,75 @@ ul.navigation
 			float: left
 			position: relative
 			
-			a
-				padding: 22px 20px
+			> a
+				padding: $nav-padding //22px 20px
 				&:hover
-					background: $dark-nav
+					background: $nav-hover-background
 			
-			// If link has sub then show arrow
-			&.has-sub > a:after
-				content: '\f107'
-				display: block
-				position: absolute
-				top: 22px
-				right: 5px
-				width: 8px
-				font-family: FontAwesome
+			// If link has submenu then show arrow and add extra padding
+			&.has-sub > a
+				padding-right: 30px
+					
+				&:after
+					content: '\f107'
+					display: block
+					font-family: FontAwesome
+					position: absolute
+					right: 15px
+					top: 22px
+					width: 8px
 
-			// Submenu 
+			// On menu link hover
 			&:hover >
-				// So we can keep the link with the dropdown dark
+				// Keep the link with the dropdown dark (active)
 				a
-					background: $dark-nav
+					background: $nav-hover-background
 
 				// Show the sub menu
 				ul
 					left: auto
 
+			// Submenu
 			ul
-				left: -9999px
-				position: absolute
-				background: #e4e4e4
-				width: 230px
-				float: right
+				background: $nav-sub-background
 				display: block
+				float: right
+				left: -9999px
+				margin: 0
+				position: absolute
+				width: 230px
 
 				li
 					border: 0
-					border-bottom: 1px solid #aaa
+					border-left: 10px solid rgba(0,0,0,0)
+					@include transition(all 0.35s ease)
 					&:last-of-type
 						border-bottom: 0
 					&:hover
-						background: $dark-nav
-						border-color: $dark-nav
-						// Submenu of submenu
+						background: lighten($nav-sub-background, 5)
+						border-color: $nav-background
+						// When sub menu (of submenu) link hovered
 						> ul
 							left: auto
 						> a
-							color: #fff
+							color: $nav-sub-hover-link
 
 					// If it has a sub menu
 					&.has-sub > a:after
 						content: "\f105"
 						display: block
+						font-family: FontAwesome
 						position: absolute
 						right: 12px
 						top: 36%
 						width: 10px
-						font-family: FontAwesome
+
+
 					a
+						color: $nav-sub-link
 						line-height: 1.3
-						color: #333
 						padding: 15px 20px
+				
 				// Submenu of submenu
 				ul
 					margin-left: 100%
