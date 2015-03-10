@@ -1,11 +1,12 @@
 /* Grid */
+.main
+	margin-top: 50px
+	margin-bottom: 50px
+	
 %wrap, .wrap, .main
 	padding: 2rem
 	@include container
 
-.main
-	margin-top: 50px
-	margin-bottom: 50px
 
 .u-full-width
 	width: 100%
@@ -16,7 +17,7 @@
 .alignleft, .pull-left
 	float: left
 	
-@include susy-breakpoint($break-small, $susy)
+@include susy-breakpoint($break-medium, $susy)
 	.wrap, .main
 		padding: 0
 	.content

@@ -10,9 +10,10 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] 
-	background-color: transparent
 	//border-radius: 4px
+	background-color: transparent
 	border: 1px solid #bbb
+	box-sizing: border-box
 	color: #555
 	cursor: pointer
 	display: inline-block
@@ -27,7 +28,6 @@ input[type="button"]
 	text-transform: uppercase
 	white-space: nowrap
 	@include transition(all .25s ease)
-	//@include box-sizing(border-box)
 	&:hover, 
 	&:focus
 		border-color: #888

@@ -5,44 +5,61 @@
 // Grid
 $susy: (
 	columns: 12,
-	gutters: 4/5,
-	container: 1120px,
+	gutters: 0.8,
+	container: 1100px,
 	global-box-sizing: border-box,
+	use-custom: (
+		box-sizing: false
+	)
 );
-$break-small: 768px;
+$break-small: 360px;
+$break-medium: 768px;
+$break-big: 1224px;
 
 // Fonts
-$font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !global; // "Raleway", default fonts
-$heading-family: 'Oswald', sans-serif; //'Montserrat', sans-serif !global; // default heading (h1-h6) font
-$cursive-family: 'Crimson Text', serif !global; // default cursive font
-$font-color: #333333 !global;  // default font color
-$heading-color: #181818 !global; // default heading (h1-h6) color
-$form-font: $font-family !global; // default form font
+$font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; // "Raleway", default fonts
+$heading-family: 'Oswald', sans-serif; //'Montserrat', sans-serif; // default heading (h1-h6) font
+$cursive-family: 'Crimson Text', serif; // default cursive font
+$form-font: $font-family; // Default form font
 
-// LINKS
-$link-color: #AD141E !global; // default link color
-$link-hover: #DB1926 !global; // default link color on :hover
-$link-decoration: underline !global; // default link decoration
+$font-color: #333333;  // Default body font color
+$heading-color: #181818; // Default heading (h1-h6) font color
 
 // UI Colors
-$primary-color: #AD141E; //#33C3F0;
-
+$primary-color: #AD141E;
 $dark-grey: #aaaaaa;
 $grey: #cccccc;
-$light-grey: $grey;
+$light-grey: #f0f0f0;
+
+// LINKS
+$link-color: $primary-color; // default link color
+$link-hover: darken($link-color, 10); // default link color on :hover
+$link-decoration: underline; // default link decoration
+
 
 // Navigation
 $nav-background: $primary-color;
-$nav-hover-background: darken($primary-color, 10);
-$nav-link: $grey;
+$nav-hover-background: darken($nav-background, 10);
+$nav-link: #ffffff;
 $nav-hover-link: #ffffff;
-$nav-align: right;
+
+// Sub navigation
+$nav-sub-background: #232323;
+$nav-sub-hover-background: $nav-hover-background;
+$nav-sub-link: #efefef;
+$nav-sub-hover-link: #ffffff;
 
 // Footer
 $footer-background: #232323;
 
-// BREAKPOINTS
-$tablet-width: 768px !global; // the tablet width media query
-$mobile-portrait-width: 300px !global; // the mobile portrait media query
-$mobile-landscape-width: 420px !global; // the mobile landscape media query
-$mobile-fluid-width: 100%; // this value is not used with breakpoints, it is used in generating a fluid grid for mobile devices
+
+
+// Functions (BETA)
+$nav-height: 6.8rem;
+$nav-font-size: 1.2rem;
+$nav-padding: ($nav-height - ($nav-font-size * 2)) / 2;
+
+@mixin font-size($sizeValue) {
+	font-size: $sizeValue + px;
+	font-size: ($sizeValue / 10) + rem;
+}

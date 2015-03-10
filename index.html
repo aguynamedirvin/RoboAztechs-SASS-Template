@@ -14,16 +14,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.4.0/slick.css"/>
 	
 </head>
 
 <body>
-
-	<div class="strip"></div>
 	
 
 	<!-- Main navigation menu -->
@@ -64,17 +60,17 @@
 			<li><a href="#">About Us</a></li>
 			<li><a href="#">Contact Us</a></li>
 			
-			<li><a class="show-search_btn fa fa-search"></a></li>
+			<li><div class="show-search fa fa-search"></div></li>
 		</ul>
 	</nav><!-- /Main navagation menu -->
 
-	<!-- Search Box 
+	<!-- Search Box -->
 	<div class="search-cont">
 		<form>
 			<input class="search-box" type="text" placeholder="Search..." />
-			<i class="close-search_btn fa fa-times"></i>
+			<i class="close-search fa fa-times"></i>
 		</form>
-	</div>/ Search Box -->
+	</div><!-- / Search Box -->
 
 
 	<main class="main">
@@ -378,11 +374,18 @@
 	</footer><!-- /Footer -->
 
 	<!-- Javascript -->
+	<!-- JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script>
+	<script src='js/fastclick.js' defer></script>
+	<script src="js/navigation.js"></script>
+	<script type="text/javascript">
 		// jQuery Fallback
 		if (!window.jQuery) { document.write('<script src="js/jquery-1.11.2.min.js"><\/script>'); }
-		
+		$(function() {
+			FastClick.attach(document.body);
+		});
+	</script>
+	<script>		
 		// Do not load fonts on mobile phones
 		function checkSize(){
 			if ($(window).width() > 728) {
@@ -416,9 +419,8 @@
 		displaySearch();
 
 	</script>
-
-	<script src="js/navigation.js"></script>
-	<script src="http://cdn.jsdelivr.net/jquery.slick/1.4.0/slick.min.js"></script>
+	<!-- Slider -->
+	<script src="http://cdn.jsdelivr.net/jquery.slick/1.4.0/slick.min.js" defer async></script>
 	<script>
 		$(document).ready(function () {
 			$('.sponsor-slider').slick({
