@@ -1,0 +1,21 @@
+{
+  "name": "RoboAztechs Template",
+  "version": "0.5.0",
+  "authors": [
+    "Irvin <aguynamedirvin@gmail.com>"
+  ],
+  "description": "Template for the RoboAztechs website",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "~4.2.1",
+    "susy": "~2.2.2"
+  }
+}
