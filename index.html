@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	
 </head>
@@ -26,6 +26,8 @@
 	<nav id="site-navigation" role="navigation">
 		
 		<div class="logo"></div>
+
+		<div class="nav-cont">
 
 		<ul class="navigation">
 			<li><a href="index.html">Home</a></li>
@@ -59,9 +61,32 @@
 			<li><a href="#">Sponsors</a></li>
 			<li><a href="#">About Us</a></li>
 			<li><a href="#">Contact Us</a></li>
+
+			<li class="active"><a href="homepage.html">Competitions</a>
+				<ul>
+					<li><a href="#">FTC</a>
+						<ul>
+							<li><a href="#">Sub Page</a>
+								<ul>
+									<li><a href="#">Sub sub page</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Sub Page</a></li>
+						</ul>
+					</li>
+					<li><a href="#">The best long title ever 2010</a>
+						<ul>
+							<li><a href="#">Sub Page with a long ass title</a></li>
+							<li><a href="#">Sub Page</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
 			
 			<li><a class="show-search fa fa-search"></a></li>
 		</ul>
+
+		</div>
 	</nav><!-- /Main navagation menu -->
 
 	<!-- Search Box -->
@@ -374,9 +399,8 @@
 	</footer><!-- /Footer -->
 
 	<!-- Javascript -->
-	<!-- JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src='js/fastclick.js' defer></script>
+	<script src="js/fastclick.js" defer></script>
 	<script src="js/navigation.js"></script>
 	<script type="text/javascript">
 		// jQuery Fallback
@@ -388,7 +412,7 @@
 	<script>		
 		// Do not load fonts on mobile phones
 		function checkSize(){
-			if ($(window).width() > 728) {
+			if ($(window).width() > 768) {
 				document.write('<link href="http://fonts.googleapis.com/css?family=Open+Sans:400|Raleway:300,600|Crimson+Text:400italic|Oswald:400" rel="stylesheet" type="text/css">');
 			}
 		}

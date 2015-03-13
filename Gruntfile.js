@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 						outputStyle: 'expanded'
 				},
 				files: {
-					'css/main.css': 'sass/main.sass'
+					'assets/css/main.css': 'sass/main.sass'
 				}
 			}
 		}, // END SASS
@@ -33,8 +33,8 @@ module.exports = function(grunt) {
 				},
 				files: {
 					/*'build/all.min.js': ['js/jquery-1.11.2.min.js', 'js/*.js'],*/
-					'build/fastclick.min.js': ['js/fastclick.js'],
-					'build/navigation.min.js': ['js/navigation.js']
+					'assets/js/fastclick.min.js': ['js/fastclick.js'],
+					'assets/js/navigation.min.js': ['js/navigation.js']
 				}
 			}
 		} // END UGLIFY

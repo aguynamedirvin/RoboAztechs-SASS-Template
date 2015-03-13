@@ -1,3 +1,6 @@
+//.edge ul
+//	right: 0
+
 #site-navigation
 	background: $nav-background
 	color: $nav-link
@@ -7,13 +10,11 @@
 	width: 100%
 	z-index: 99
 
-
 ul.navigation
 	list-style: none
 	margin: 0
 	position: static
 	display: none
-
 	li
 		border-top: 1px solid $nav-hover-background
 		margin: 0
@@ -131,7 +132,7 @@ ul.navigation
 					background: $nav-hover-background
 			
 			// If link has submenu then show arrow and add extra padding
-			&.has-sub > a
+			&.dropdown > a
 				padding-right: 30px
 					
 				&:after
@@ -166,7 +167,7 @@ ul.navigation
 				li
 					border: 0
 					border-left: 10px solid rgba(0,0,0,0)
-					@include transition(all 0.35s ease)
+					@include transition(all 0.25s ease)
 					&:last-of-type
 						border-bottom: 0
 					&:hover
@@ -179,7 +180,7 @@ ul.navigation
 							color: $nav-sub-hover-link
 
 					// If it has a sub menu
-					&.has-sub > a:after
+					&.dropdown > a:after
 						content: "\f105"
 						display: block
 						font-family: FontAwesome
