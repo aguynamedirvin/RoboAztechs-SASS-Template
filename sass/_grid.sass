@@ -27,6 +27,9 @@
 	.sidebar
 		@include span(4 last)
 
+	// Generate all columns .col-#
 	@for $i from 1 through 12
 		.col-#{$i}
 			@include span($i)
+			&:last-of-type
+				margin: 0

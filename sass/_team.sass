@@ -1,24 +1,33 @@
 /** Team **/
 .team-member 
+	border-radius: 7px
+	border: 1px solid #ddd
 	display: inline-block
 	margin-bottom: 20px
 	margin-top: 20px
-	text-align: center
+	overflow: hidden
 	@include span(5.75)
-@media screen and (min-width: $break-small)
+@media screen and (min-width: $break-medium)
 	.team-member
-		@include span(2.25)
+		@include span(2.8)
 .team-member-portrait 
-	border-radius: 100%
 	height: 0
-	margin-bottom: 20px
+	margin: 0
 	overflow: hidden
 	padding-bottom: 100%
 	width: 100%
 .team-member-portrait img 
 	width: 100%
+.team-member-meta
+	display: none
+	font-size: 1.2rem
+	line-height: 1.5
+	padding: 0 10px
 .team-member-name 
-	text-transform: uppercase
 	font-weight: bold
+	margin: 10px 10px 0
+	text-transform: uppercase
 .team-member-role 
+	font-size: 1.2rem
+	margin: 0 10px
 	@extend %italic
