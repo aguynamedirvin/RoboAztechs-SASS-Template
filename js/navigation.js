@@ -21,7 +21,6 @@
 
 					if (mainmenu.hasClass('open')) { 
 						//mainmenu.hide().removeClass('open');
-						console.log('Close');
 						mainmenu.slideToggle().removeClass('open');
 					}
 					else {
