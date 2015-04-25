@@ -1,7 +1,7 @@
 {
   "name": "RoboAztechs",
   "version": "0.6.0",
-  "author": "Irvin <aguynamedirvin@gmail.com>"
+  "author": "Irvin <aguynamedirvin@gmail.com>",
   "description": "RoboAztechs website template",
   "main": "Gruntfile.js",
   "directories": {
