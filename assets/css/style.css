@@ -1,14 +1,18 @@
 /*
- * Theme Name: RoboAztechs 2015
+ * Theme Name: RoboAztechs
  * Theme URI: http://roboaztechs.org/
  * Author: Irvin Dominguez
  * Author URI: http://twitter.com/aguynamedirvin;
  * Description: The 2015 theme for RoboAztechs features a beautiful typography, and flat based layout, a responsive layout that looks great on any screen wheter it's a desktop, tablet, or phone.
- * Version: 0.5
+ * Version: 1.0
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Tags: black, brown, red, yellow
+ * Tags: black, red, yellow
  * Text Domain: roboaztechs */
+/*
+ Note
+ html is set to 62.5% so that all the REM measurements
+ are based on 10px sizing. So basically 1.5rem=15px (: */
 *, *:after, *:before {
   box-sizing: border-box; }
 
@@ -110,9 +114,8 @@ blockquote, q {
 a {
   color: #AD141E;
   text-decoration: underline; }
-
-a:hover {
-  color: #7f0f16; }
+  a:hover {
+    color: #7f0f16; }
 
 /* Lists */
 ul {
@@ -154,6 +157,7 @@ blockquote, q, .author-role, .comment .metadata, .team-member-role {
   width: 100px;
   z-index: 3; }
 
+/** For Mobile Devices **/
 @media screen and (min-width: 1200px) {
   .logo {
     background-image: url(../img/big-logo.png);
@@ -185,6 +189,11 @@ blockquote, q, .author-role, .comment .metadata, .team-member-role {
     .search-cont .close-search:hover {
       color: #cccccc;
       cursor: pointer; } }
+
+/** For Retina Displays **/
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    background-image: url(../img/logo_2x.png); } }
 
 hr {
   border-top: 1px solid #E1E1E1;

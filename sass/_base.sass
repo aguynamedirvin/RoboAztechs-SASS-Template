@@ -1,6 +1,8 @@
-// NOTE 
-// html is set to 62.5% so that all the REM measurements
-// are based on 10px sizing. So basically 1.5rem=15px :)
+/*
+ Note 
+ html is set to 62.5% so that all the REM measurements
+ are based on 10px sizing. So basically 1.5rem=15px (:
+
 *,
 *:after,
 *:before
@@ -108,8 +110,8 @@ blockquote, q
 a 
 	color: $link-color
 	text-decoration: $link-decoration
-a:hover 
-	color: $link-hover
+	&:hover
+		color: $link-hover
 
 
 /* Lists */
@@ -152,6 +154,7 @@ hr
 	width: 100px
 	z-index: 3
 
+/** For Mobile Devices **/
 @media screen and (min-width: $break-big)
 	.logo
 		background-image: url(../img/big-logo.png)
@@ -186,4 +189,7 @@ hr
 			color: $grey
 			cursor: pointer
 
-
+/** For Retina Displays **/
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+	.logo
+		background-image: url(../img/logo_2x.png)

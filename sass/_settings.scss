@@ -12,9 +12,9 @@ $susy: (
 		box-sizing: false
 	)
 );
-$break-small: 360px;
-$break-medium: 868px;
-$break-big: 1200px;
+$break-small: 360px; // Mobile Devices such as phones
+$break-medium: 868px; // Small Screen Devices
+$break-big: 1200px; // Large Screen Devices
 
 // Fonts
 $font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; // "Raleway", default fonts
