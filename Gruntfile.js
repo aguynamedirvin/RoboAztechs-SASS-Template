@@ -21,6 +21,11 @@ module.exports = function(grunt) {
 			sass: {
 				files: ['sass/**/*.sass', 'sass/**/*.scss'],
 				tasks: ['sass']
+			},
+
+			uglify: {
+				files: ['js/**/*.js'],
+				tasks: ['uglify']
 			}
 		}, // END WATCH
 		uglify: {
@@ -47,6 +52,6 @@ grunt.loadNpmTasks('grunt-contrib-uglify');
 //grunt.loadNpmTasks('grunt-contrib-concat');
 
 grunt.registerTask('build', ['sass']);
-grunt.registerTask('default', ['build','watch']);
+grunt.registerTask('default', ['build', 'watch']);
 
 };

@@ -55,12 +55,15 @@
 
 				if (settings.sticky === true) cssmenu.css('position', 'fixed');
 
+				// Define screen breakpoint
+				var breakpoint = 1185;
+
 				resizeFix = function() {
-					if ($( window ).width() > 1185) {
+					if ($( window ).width() > breakpoint) {
 						cssmenu.find('ul').show();
 					}
 
-					if ($(window).width() <= 1185) {
+					if ($(window).width() <= breakpoint) {
 						cssmenu.find('ul').hide().removeClass('open');
 					}
 				};
